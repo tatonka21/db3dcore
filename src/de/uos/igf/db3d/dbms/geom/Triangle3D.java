@@ -882,9 +882,13 @@ public class Triangle3D implements PersistentObject, SimpleGeoObj,
 			return 0;
 		double scalar = vec.scalarproduct(this.getNormal(sop));
 		if (scalar < 0)
-			return -1;
+			{
+			    return -1;
+			}
 		else
-			return 1;
+			{
+			    return 1;
+			}
 	}
 
 	/**
@@ -1180,9 +1184,13 @@ public class Triangle3D implements PersistentObject, SimpleGeoObj,
 			// inside
 			Point3D point = (Point3D) type;
 			if (this.containsInPlane(point, sop))
-				return true;
+				{
+				    return true;
+				}
 			else
-				return false;
+				{
+				    return false;
+				}
 		}
 	}
 
@@ -1264,10 +1272,14 @@ public class Triangle3D implements PersistentObject, SimpleGeoObj,
 				|| ((xValue > c) && ((yValue < c) || (zValue < c)))
 				|| ((yValue < c) && (zValue > c))
 				|| ((yValue > c) && (zValue < c)))
-			return true;
+			{
+			    return true;
+			}
 
 		else
-			return false;
+			{
+			    return false;
+			}
 	}
 
 	/**
@@ -1317,7 +1329,9 @@ public class Triangle3D implements PersistentObject, SimpleGeoObj,
 		 */
 
 		if (!(this.getMBB().intersects(triangle.getMBB(), sop)))
-			return false;
+			{
+			    return false;
+			}
 		else {
 			// parallelism of planes
 			if ((this.getNormal(sop).isCollinear(triangle.getNormal(sop), sop)) != 0) {
@@ -1770,9 +1784,13 @@ public class Triangle3D implements PersistentObject, SimpleGeoObj,
 				counter++;
 		}
 		if (counter == 3)
-			return true;
+			{
+			    return true;
+			}
 		else
-			return false;
+			{
+			    return false;
+			}
 	}
 
 	/**
@@ -1943,7 +1961,9 @@ public class Triangle3D implements PersistentObject, SimpleGeoObj,
 				// points are not on plane
 				return false;
 		} else
-			return false;
+			{
+			    return false;
+			}
 	}
 
 	/**
@@ -2096,7 +2116,9 @@ public class Triangle3D implements PersistentObject, SimpleGeoObj,
 
 							if (((Point3D) object0).isEqual(
 									((Point3D) object1), sop))
-								return object0;
+								{
+								    return object0;
+								}
 							else {
 								return new Segment3D(((Point3D) object0),
 										((Point3D) object1), sop);
@@ -2106,10 +2128,14 @@ public class Triangle3D implements PersistentObject, SimpleGeoObj,
 						// be Point3D
 						if (((Point3D) object0).isEqual(((Point3D) object2),
 								sop))
-							return object0;
+							{
+							    return object0;
+							}
 						else
-							return new Segment3D(((Point3D) object0),
+							{
+							    return new Segment3D(((Point3D) object0),
 									((Point3D) object2), sop);
+							}
 					}
 				}
 			} else {
@@ -2320,8 +2346,10 @@ public class Triangle3D implements PersistentObject, SimpleGeoObj,
 			else
 				return null;
 		} else
-			// result is segment, thus intersectionInPlane
-			return this.intersectionInPlane(segment, sop);
+			
+			{
+			    return this.intersectionInPlane(segment, sop);
+			}
 	}
 
 	/**
@@ -2757,9 +2785,13 @@ public class Triangle3D implements PersistentObject, SimpleGeoObj,
 
 		if (projectionP1.isEqual(projectionP2, sop))
 			if (this.contains(projectionP1, sop))
-				return projectionP1;
+				{
+				    return projectionP1;
+				}
 			else
-				return null;
+				{
+				    return null;
+				}
 		else {
 			Line3D projectedLine = new Line3D(projectionP1, projectionP2, sop);
 			if (this.intersects(projectedLine, sop))
@@ -2829,9 +2861,13 @@ public class Triangle3D implements PersistentObject, SimpleGeoObj,
 
 		if (projectionP1.isEqual(projectionP2, sop))
 			if (this.contains(projectionP1, sop))
-				return projectionP1;
+				{
+				    return projectionP1;
+				}
 			else
-				return null;
+				{
+				    return null;
+				}
 		else {
 			Segment3D projectedSegment = new Segment3D(projectionP1,
 					projectionP2, sop);
@@ -3005,9 +3041,13 @@ public class Triangle3D implements PersistentObject, SimpleGeoObj,
 		// calculate area of triangle and compare with multible of epsilon
 		double area = this.getArea();
 		if (area > (sop.getEpsilon() * SimpleGeoObj.MIN_AREA_EPSILON_FACTOR))
-			return true;
+			{
+			    return true;
+			}
 		else
-			return false;
+			{
+			    return false;
+			}
 	}
 
 	/**
@@ -3033,9 +3073,13 @@ public class Triangle3D implements PersistentObject, SimpleGeoObj,
 
 		if (numerator > (denumerator * (SimpleGeoObj.MIN_AREA_EPSILON_FACTOR * sop
 				.getEpsilon())))
-			return true;
+			{
+			    return true;
+			}
 		else
-			return false;
+			{
+			    return false;
+			}
 	}
 
 	/**

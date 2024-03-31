@@ -688,9 +688,13 @@ public class Point3D implements PersistentObject, SimpleGeoObj, Equivalentable,
 
 		Point3D projectionToLine = (Point3D) this.projection(seg.getLine(sop));
 		if (seg.contains(projectionToLine, sop))
-			return projectionToLine;
+			{
+			    return projectionToLine;
+			}
 		else
-			return null;
+			{
+			    return null;
+			}
 	}
 
 	/**

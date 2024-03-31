@@ -932,9 +932,13 @@ public class SegmentNet3DComp implements PersistentObject, ComplexGeoObj,
 			return false;
 
 		if (!(this.getEntryElement().getNeighbour(1) == null))
-			return true;
+			{
+			    return true;
+			}
 		else
-			return false;
+			{
+			    return false;
+			}
 	}
 
 	/**

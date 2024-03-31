@@ -822,9 +822,13 @@ public class Tetrahedron3D implements PersistentObject, SimpleGeoObj,
 				|| this.getTriangle(1).intersects(line, sop)
 				|| this.getTriangle(2).intersects(line, sop)
 				|| this.getTriangle(3).intersects(line, sop))
-			return true;
+			{
+			    return true;
+			}
 		else
-			return false;
+			{
+			    return false;
+			}
 	}
 
 	/**
@@ -860,9 +864,13 @@ public class Tetrahedron3D implements PersistentObject, SimpleGeoObj,
 				|| this.getTriangle(1).intersects(segment, sop)
 				|| this.getTriangle(2).intersects(segment, sop)
 				|| this.getTriangle(3).intersects(segment, sop))
-			return true;
+			{
+			    return true;
+			}
 		else
-			return false;
+			{
+			    return false;
+			}
 	}
 
 	/**
@@ -882,9 +890,13 @@ public class Tetrahedron3D implements PersistentObject, SimpleGeoObj,
 				|| this.getTriangle(1).intersects(plane, sop)
 				|| this.getTriangle(2).intersects(plane, sop)
 				|| this.getTriangle(3).intersects(plane, sop))
-			return true;
+			{
+			    return true;
+			}
 		else
-			return false;
+			{
+			    return false;
+			}
 	}
 
 	/**
@@ -932,10 +944,14 @@ public class Tetrahedron3D implements PersistentObject, SimpleGeoObj,
 				|| this.getTriangle(2).intersects(triangle, sop)
 				|| this.getTriangle(3).intersects(triangle, sop))
 			// Here an IllegalStateException can be thrown signaling problems
-			// with the dimensions of the wireframe.
-			return true;
+			
+			{
+			    return true;
+			}
 		else
-			return false;
+			{
+			    return false;
+			}
 	}
 
 	/**
@@ -1239,7 +1255,9 @@ public class Tetrahedron3D implements PersistentObject, SimpleGeoObj,
 		// the dimensions of the wireframe.
 
 		if (result == null)
-			return -1;
+			{
+			    return -1;
+			}
 		else {
 
 			switch (result.getType()) {
@@ -1578,9 +1596,13 @@ public class Tetrahedron3D implements PersistentObject, SimpleGeoObj,
 		// all points are contained <=> the segment is contained
 		if (this.contains(segment.getPoint(0), sop)
 				&& this.contains(segment.getPoint(1), sop))
-			return true;
+			{
+			    return true;
+			}
 		else
-			return false;
+			{
+			    return false;
+			}
 	}
 
 	/**
@@ -1607,9 +1629,13 @@ public class Tetrahedron3D implements PersistentObject, SimpleGeoObj,
 		if (this.contains(triangle.getPoint(0), sop)
 				&& this.contains(triangle.getPoint(1), sop)
 				&& this.contains(triangle.getPoint(2), sop))
-			return true;
+			{
+			    return true;
+			}
 		else
-			return false;
+			{
+			    return false;
+			}
 	}
 
 	/**
@@ -1637,9 +1663,13 @@ public class Tetrahedron3D implements PersistentObject, SimpleGeoObj,
 				&& this.contains(tetra.getPoint(1), sop)
 				&& this.contains(tetra.getPoint(2), sop)
 				&& this.contains(tetra.getPoint(3), sop))
-			return true;
+			{
+			    return true;
+			}
 		else
-			return false;
+			{
+			    return false;
+			}
 	}
 
 	/**
@@ -1908,7 +1938,9 @@ public class Tetrahedron3D implements PersistentObject, SimpleGeoObj,
 				return null;
 			}
 		} else
-			return null;
+			{
+			    return null;
+			}
 	}
 
 	/*
@@ -2298,8 +2330,10 @@ public class Tetrahedron3D implements PersistentObject, SimpleGeoObj,
 				triangle.getPlane(sop), sop);
 
 		if (projectionOnPlane.getType() == SimpleGeoObj.TRIANGLE3D)
-			return ((Triangle3D) projectionOnPlane).intersectionInPlane(
+			{
+			    return ((Triangle3D) projectionOnPlane).intersectionInPlane(
 					triangle, sop);
+			}
 
 		else { // projectionOnPlane must be of type WIREFRAME3D
 			Wireframe3D wf = (Wireframe3D) projectionOnPlane;
@@ -2371,9 +2405,13 @@ public class Tetrahedron3D implements PersistentObject, SimpleGeoObj,
 
 		if (!(this.getVolume() > (SimpleGeoObj.MIN_VOLUME_EPSILON_FACTOR * sop
 				.getEpsilon())))
-			return false;
+			{
+			    return false;
+			}
 		else
-			return true;
+			{
+			    return true;
+			}
 
 	}
 

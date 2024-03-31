@@ -686,9 +686,11 @@ public class Segment3D implements PersistentObject, SimpleGeoObj,
 				} else { // this contains P0 and not P1 and seg doesn't contain
 					// P0 -> seg must contain P1
 					if (!(segContainsP1))
-						throw new IllegalStateException(
+						{
+						    throw new IllegalStateException(
 								Db3dSimpleResourceBundle
 										.getString("db3d.geom.somewrong"));
+						}
 					else {
 						if (!(seg.getPoint(0).isEqual(this.getPoint(1), sop)))
 							return new Segment3D(seg.getPoint(0), this
@@ -716,15 +718,19 @@ public class Segment3D implements PersistentObject, SimpleGeoObj,
 							// argument at end point
 							// 0 of this
 						} else
-							return seg.getPoint(1); // segments touch in segP1
+							{
+							    return seg.getPoint(1);
+							} // segments touch in segP1
 						// and thisP0
 					}
 				} else { // this contains P1 and not P0 and seg doesn't contain
 					// P0 -> seg must contain P1
 					if (!(segContainsP1))
-						throw new IllegalStateException(
+						{
+						    throw new IllegalStateException(
 								Db3dSimpleResourceBundle
 										.getString("db3d.geom.somewrong"));
+						}
 					else {
 						if (!(seg.getPoint(1).isEqual(this.getPoint(1), sop))) {
 							return new Segment3D(seg.getPoint(1), this

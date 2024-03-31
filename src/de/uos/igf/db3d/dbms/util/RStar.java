@@ -776,8 +776,10 @@ public final class RStar implements SAM, PersistentObject {
 					} else { // the node can only contain equal boxes if search
 						// box is contained in it
 						if (thisMBB.contains(mbb, getSOP()))
-							((Node) iEntry.getSon()).retrieve(mbb,
+							{
+							    ((Node) iEntry.getSon()).retrieve(mbb,
 									retrieveType, set);
+							}
 					}
 					break;
 

@@ -1972,8 +1972,10 @@ public class TetrahedronNet3DComp implements PersistentObject, ComplexGeoObj,
 																// &&
 																// k==2
 																// &&
-																// n==0))
-																otind = 1;
+																
+																{
+																    otind = 1;
+																}
 															else if (j != 2
 																	&& k != 2
 																	&& n != 2) // (
@@ -2012,10 +2014,14 @@ public class TetrahedronNet3DComp implements PersistentObject, ComplexGeoObj,
 																// k==2
 																// &&
 																// n==1))
-																otind = 2; // gegenueber
+																{
+																    otind = 2;
+																}
 															// 2
 															else
-																otind = 0;
+																{
+																    otind = 0;
+																}
 
 															oTE.setNeighbour(
 																	otind,

@@ -1402,7 +1402,9 @@ public class TriangleNet3DComp implements PersistentObject, ComplexGeoObj,
 
 		TriangleElt3DIterator it = this.getElementsIterator();
 		while (it.hasNext())
-			it.next().invertOrientation();
+			{
+			    it.next().invertOrientation();
+			}
 	}
 
 	/**
@@ -1697,10 +1699,14 @@ public class TriangleNet3DComp implements PersistentObject, ComplexGeoObj,
 													// ||
 													// (j==2
 													// &&
-													// k==1))
-													otind = 0;
+													
+													{
+													    otind = 0;
+													}
 												else
-													otind = 1;
+													{
+													    otind = 1;
+													}
 
 												oTE.setNeighbour(otind, elts[i]);
 												it.remove();
