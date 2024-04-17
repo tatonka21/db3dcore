@@ -4,6 +4,7 @@
 
 package de.uos.igf.db3d.dbms.model3d;
 
+import io.github.pixee.security.ObjectInputFilters;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -338,6 +339,7 @@ public class PointNet3DComp implements PersistentObject, ComplexGeoObj,
 			os.flush();
 			ObjectInputStream is = new ObjectInputStream(
 					new ByteArrayInputStream(out.toByteArray()));
+			ObjectInputFilters.enableObjectFilterIfUnprotected(is);
 			Object ret = is.readObject();
 			is.close();
 			os.reset();
